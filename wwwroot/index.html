@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SSE Demo</title>
+</head>
+<body>
+  <h1>SSE Demo</h1>
+
+  <p>
+    <strong>Send a message to the server and it will be relayed back to the client via SSE</strong>
+  </p>
+  <form onsubmit="sendMessage(event)">
+    <input type="text" id="newMessage" placeholder="Enter your message">
+    <button type="submit">Send Message</button>
+  </form>
+
+  <ul id="messageList"></ul>
+
+  <script>
+    // Function to send a message to the server
+    async function sendMessage(event) {
+      event.preventDefault();
+
+      const newMessage = document.getElementById('newMessage').value;
+
+      try {
+        const response = await fetch('/message', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ message: newMessage }),
+        });
+
+        if (response.ok) {
+          // Clear the input field on successful message send
+          document.getElementById('newMessage').value = '';
+        } else {
+          console.error('Failed to send message:', response.statusText);
+        }
+      } catch (error) {
+        console.error('Error sending message:', error);
+      }
+
+      return false;
+    }
+
+    // Function to update the message list
+    function updateMessageList(message) {
+      const messageList = document.getElementById('messageList');
+      const li = document.createElement('li');
+      li.textContent = message;
+      messageList.appendChild(li);
+    }
+
+    // Function to establish SSE connection
+    function establishSSEConnection() {
+      const eventSource = new EventSource('/sse');
+
+      eventSource.onmessage = (event) => {
+        const newMessage = event.data;
+        updateMessageList(newMessage);
+      };
+
+      eventSource.onerror = (error) => {
+        console.error('SSE Error:', error);
+        eventSource.close();
+      };
+    }
+
+    // Call the function to establish SSE connection when the page loads
+    window.onload = establishSSEConnection;
+  </script>
+</body>
+</html>

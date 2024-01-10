@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "Hash": "A4HBcSPs3KIW2QEofhiIhLxuansp2GnWTGYLA1o5t0Y=",
+  "Source": "SseDemo",
+  "BasePath": "_content/SseDemo",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "SseDemo\\wwwroot",
+      "Source": "SseDemo",
+      "ContentRoot": "C:\\Users\\joshua.nelson\\Source\\Foshkey\\SseDemo\\wwwroot\\",
+      "BasePath": "_content/SseDemo",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "C:\\Users\\joshua.nelson\\Source\\Foshkey\\SseDemo\\wwwroot\\index.html",
+      "SourceId": "SseDemo",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\joshua.nelson\\Source\\Foshkey\\SseDemo\\wwwroot\\",
+      "BasePath": "_content/SseDemo",
+      "RelativePath": "index.html",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\index.html"
+    }
+  ]
+}
