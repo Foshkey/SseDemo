@@ -9,3 +9,5 @@ Either load in vscode and hit F5 (Run & Debug) or run the command `dotnet run` a
 ## Limitations Observed
 
 Seems like we need to keep the connection open by looping with a `Task.Delay`. Without that bit of code, the context gets disposed and the event stream can't be written to anymore. There is code included to remove the context when it disconnects, though this is largely untested.
+
+Also worth noting that SSE is only one-way (from server to client), which is a limitation when compared to i.e. websockets
