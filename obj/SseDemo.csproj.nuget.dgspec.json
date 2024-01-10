@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\joshua.nelson\\Source\\Foshkey\\SseDemo\\SseDemo.csproj": {}
+    "c:\\Users\\joshua.nelson\\Source\\Foshkey\\SseDemo\\SseDemo.csproj": {}
   },
   "projects": {
-    "C:\\Users\\joshua.nelson\\Source\\Foshkey\\SseDemo\\SseDemo.csproj": {
+    "c:\\Users\\joshua.nelson\\Source\\Foshkey\\SseDemo\\SseDemo.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\joshua.nelson\\Source\\Foshkey\\SseDemo\\SseDemo.csproj",
+        "projectUniqueName": "c:\\Users\\joshua.nelson\\Source\\Foshkey\\SseDemo\\SseDemo.csproj",
         "projectName": "SseDemo",
-        "projectPath": "C:\\Users\\joshua.nelson\\Source\\Foshkey\\SseDemo\\SseDemo.csproj",
+        "projectPath": "c:\\Users\\joshua.nelson\\Source\\Foshkey\\SseDemo\\SseDemo.csproj",
         "packagesPath": "C:\\Users\\joshua.nelson\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\joshua.nelson\\Source\\Foshkey\\SseDemo\\obj\\",
+        "outputPath": "c:\\Users\\joshua.nelson\\Source\\Foshkey\\SseDemo\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\joshua.nelson\\AppData\\Roaming\\NuGet\\NuGet.Config",

@@ -1,3 +1,0 @@
-﻿<Project>
-  <Import Project="..\build\SseDemo.props" />
-</Project>
