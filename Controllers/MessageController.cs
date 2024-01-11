@@ -8,7 +8,7 @@ namespace SseDemo.Controllers;
 public class MessageController : ControllerBase
 {
     [HttpPost]
-    public async Task<IActionResult> Post([FromBody] MessageModel model, [FromServices] SseService sseService)
+    public IActionResult Post([FromBody] MessageModel model, [FromServices] SseService sseService)
     {
         // Handle the incoming message
         var message = model?.Message;
@@ -18,7 +18,8 @@ public class MessageController : ControllerBase
         }
 
         // Send the message to all connected clients
-        await sseService.SendToAllClients(message);
+        sseService.Broadcast(message);
+
         return Ok("Message sent successfully");
     }
 }
