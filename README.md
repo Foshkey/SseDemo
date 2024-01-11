@@ -12,4 +12,6 @@ Seems like we need to keep the connection open by looping with a `Task.Delay`. W
 
 Also worth noting that SSE is only one-way (from server to client), which is a limitation when compared to i.e. websockets.
 
-Currently how this code is written, clients are added to a singleton-housed List, and removed when disconnected. I have a feeling that this will definitely be a problem at scale, when we have clients being added and removed frequently.
+### Will it scale?
+
+This uses an event handler in `SseService` to keep track of clients connected. I'm not sure how this would perform at scale with multiple instances. Will broadcasting only affect clients connected to that instance instead of the whole service?
